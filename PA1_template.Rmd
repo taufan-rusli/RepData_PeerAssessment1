@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Reproducible Research Peer Assessment 1
 ==========================================
 
@@ -19,8 +18,8 @@ data$date <- as.Date(data$date, "%Y-%m-%d")
 
 Calculate mean and median total number of steps taken per day. Missing values are ignored.
 ```{r, echo = TRUE}
-mean(data$steps, na.rm = TRUE)
-median(data$steps, na.rm = TRUE)
+by(data$steps, data$date, mean, na.rm = TRUE)
+by(data$steps, data$date, median, na.rm = TRUE)
 ```
 
 
@@ -32,7 +31,8 @@ ggplot(aes(x = interval, y = avgSteps), data = stepInterval) + geom_line() + sca
 ```
 
 
-Calculate the interval with highest average daily steps
+Calculate the interval with highest average daily steps.
+###The interval with the highest average daily steps is 835
 
 ```{r, echo = TRUE}
 with(stepInterval, interval[which(avgSteps == max(avgSteps))])
@@ -47,7 +47,7 @@ naRows
 ```
 
 
-Fill in NA steps observation with the mean steps of the same interval
+Fill in NA steps observations with the mean steps of the same 5-minute interval
 
 ```{r, echo = TRUE}
 naStepIndex <- which(is.na(data$steps))
@@ -65,11 +65,12 @@ ggplot(aes(x = date, weight = steps), data = data) + geom_histogram()
 ```
 
 
-Calculate new mean and median of total number of steps. No difference in the value of mean and median compared to first part of the assignment.
+Calculate new mean and median of total number of steps.
+###All the non valid average daily steps in the first part of assignment have been replaced with valid average daily steps.
 
 ```{r, echo = TRUE}
-mean(data$steps)
-median(data$steps)
+by(data$steps, data$date, mean)
+by(data$steps, data$date, median)
 ```
 
 Create a new factor variable to indicate "weekday" vs "weekend"
@@ -94,25 +95,3 @@ ggplot(aes(x = interval, y = avgSteps), data = wholeWeekStepInterval) + geom_lin
 
 ```
 
-=======
-# Reproducible Research: Peer Assessment 1
-
-
-## Loading and preprocessing the data
-
-
-
-## What is mean total number of steps taken per day?
-
-
-
-## What is the average daily activity pattern?
-
-
-
-## Imputing missing values
-
-
-
-## Are there differences in activity patterns between weekdays and weekends?
->>>>>>> dc20c7c4e92aea6af318a611e2669d5b9c6cbfaf

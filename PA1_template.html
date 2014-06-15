@@ -201,16 +201,378 @@ data$date &lt;- as.Date(data$date, &quot;%Y-%m-%d&quot;)
 
 <p>Calculate mean and median total number of steps taken per day. Missing values are ignored.</p>
 
-<pre><code class="r">mean(data$steps, na.rm = TRUE)
+<pre><code class="r">by(data$steps, data$date, mean, na.rm = TRUE)
 </code></pre>
 
-<pre><code>## [1] 37.38
+<pre><code>## data$date: 2012-10-01
+## [1] NaN
+## -------------------------------------------------------- 
+## data$date: 2012-10-02
+## [1] 0.4375
+## -------------------------------------------------------- 
+## data$date: 2012-10-03
+## [1] 39.42
+## -------------------------------------------------------- 
+## data$date: 2012-10-04
+## [1] 42.07
+## -------------------------------------------------------- 
+## data$date: 2012-10-05
+## [1] 46.16
+## -------------------------------------------------------- 
+## data$date: 2012-10-06
+## [1] 53.54
+## -------------------------------------------------------- 
+## data$date: 2012-10-07
+## [1] 38.25
+## -------------------------------------------------------- 
+## data$date: 2012-10-08
+## [1] NaN
+## -------------------------------------------------------- 
+## data$date: 2012-10-09
+## [1] 44.48
+## -------------------------------------------------------- 
+## data$date: 2012-10-10
+## [1] 34.38
+## -------------------------------------------------------- 
+## data$date: 2012-10-11
+## [1] 35.78
+## -------------------------------------------------------- 
+## data$date: 2012-10-12
+## [1] 60.35
+## -------------------------------------------------------- 
+## data$date: 2012-10-13
+## [1] 43.15
+## -------------------------------------------------------- 
+## data$date: 2012-10-14
+## [1] 52.42
+## -------------------------------------------------------- 
+## data$date: 2012-10-15
+## [1] 35.2
+## -------------------------------------------------------- 
+## data$date: 2012-10-16
+## [1] 52.38
+## -------------------------------------------------------- 
+## data$date: 2012-10-17
+## [1] 46.71
+## -------------------------------------------------------- 
+## data$date: 2012-10-18
+## [1] 34.92
+## -------------------------------------------------------- 
+## data$date: 2012-10-19
+## [1] 41.07
+## -------------------------------------------------------- 
+## data$date: 2012-10-20
+## [1] 36.09
+## -------------------------------------------------------- 
+## data$date: 2012-10-21
+## [1] 30.63
+## -------------------------------------------------------- 
+## data$date: 2012-10-22
+## [1] 46.74
+## -------------------------------------------------------- 
+## data$date: 2012-10-23
+## [1] 30.97
+## -------------------------------------------------------- 
+## data$date: 2012-10-24
+## [1] 29.01
+## -------------------------------------------------------- 
+## data$date: 2012-10-25
+## [1] 8.653
+## -------------------------------------------------------- 
+## data$date: 2012-10-26
+## [1] 23.53
+## -------------------------------------------------------- 
+## data$date: 2012-10-27
+## [1] 35.14
+## -------------------------------------------------------- 
+## data$date: 2012-10-28
+## [1] 39.78
+## -------------------------------------------------------- 
+## data$date: 2012-10-29
+## [1] 17.42
+## -------------------------------------------------------- 
+## data$date: 2012-10-30
+## [1] 34.09
+## -------------------------------------------------------- 
+## data$date: 2012-10-31
+## [1] 53.52
+## -------------------------------------------------------- 
+## data$date: 2012-11-01
+## [1] NaN
+## -------------------------------------------------------- 
+## data$date: 2012-11-02
+## [1] 36.81
+## -------------------------------------------------------- 
+## data$date: 2012-11-03
+## [1] 36.7
+## -------------------------------------------------------- 
+## data$date: 2012-11-04
+## [1] NaN
+## -------------------------------------------------------- 
+## data$date: 2012-11-05
+## [1] 36.25
+## -------------------------------------------------------- 
+## data$date: 2012-11-06
+## [1] 28.94
+## -------------------------------------------------------- 
+## data$date: 2012-11-07
+## [1] 44.73
+## -------------------------------------------------------- 
+## data$date: 2012-11-08
+## [1] 11.18
+## -------------------------------------------------------- 
+## data$date: 2012-11-09
+## [1] NaN
+## -------------------------------------------------------- 
+## data$date: 2012-11-10
+## [1] NaN
+## -------------------------------------------------------- 
+## data$date: 2012-11-11
+## [1] 43.78
+## -------------------------------------------------------- 
+## data$date: 2012-11-12
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-13
+## [1] 25.47
+## -------------------------------------------------------- 
+## data$date: 2012-11-14
+## [1] NaN
+## -------------------------------------------------------- 
+## data$date: 2012-11-15
+## [1] 0.1424
+## -------------------------------------------------------- 
+## data$date: 2012-11-16
+## [1] 18.89
+## -------------------------------------------------------- 
+## data$date: 2012-11-17
+## [1] 49.79
+## -------------------------------------------------------- 
+## data$date: 2012-11-18
+## [1] 52.47
+## -------------------------------------------------------- 
+## data$date: 2012-11-19
+## [1] 30.7
+## -------------------------------------------------------- 
+## data$date: 2012-11-20
+## [1] 15.53
+## -------------------------------------------------------- 
+## data$date: 2012-11-21
+## [1] 44.4
+## -------------------------------------------------------- 
+## data$date: 2012-11-22
+## [1] 70.93
+## -------------------------------------------------------- 
+## data$date: 2012-11-23
+## [1] 73.59
+## -------------------------------------------------------- 
+## data$date: 2012-11-24
+## [1] 50.27
+## -------------------------------------------------------- 
+## data$date: 2012-11-25
+## [1] 41.09
+## -------------------------------------------------------- 
+## data$date: 2012-11-26
+## [1] 38.76
+## -------------------------------------------------------- 
+## data$date: 2012-11-27
+## [1] 47.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-28
+## [1] 35.36
+## -------------------------------------------------------- 
+## data$date: 2012-11-29
+## [1] 24.47
+## -------------------------------------------------------- 
+## data$date: 2012-11-30
+## [1] NaN
 </code></pre>
 
-<pre><code class="r">median(data$steps, na.rm = TRUE)
+<pre><code class="r">by(data$steps, data$date, median, na.rm = TRUE)
 </code></pre>
 
-<pre><code>## [1] 0
+<pre><code>## data$date: 2012-10-01
+## [1] NA
+## -------------------------------------------------------- 
+## data$date: 2012-10-02
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-03
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-04
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-05
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-06
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-07
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-08
+## [1] NA
+## -------------------------------------------------------- 
+## data$date: 2012-10-09
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-10
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-11
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-12
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-13
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-14
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-15
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-16
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-17
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-18
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-19
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-20
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-21
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-22
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-23
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-24
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-25
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-26
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-27
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-28
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-29
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-30
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-31
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-01
+## [1] NA
+## -------------------------------------------------------- 
+## data$date: 2012-11-02
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-03
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-04
+## [1] NA
+## -------------------------------------------------------- 
+## data$date: 2012-11-05
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-06
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-07
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-08
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-09
+## [1] NA
+## -------------------------------------------------------- 
+## data$date: 2012-11-10
+## [1] NA
+## -------------------------------------------------------- 
+## data$date: 2012-11-11
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-12
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-13
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-14
+## [1] NA
+## -------------------------------------------------------- 
+## data$date: 2012-11-15
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-16
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-17
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-18
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-19
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-20
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-21
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-22
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-23
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-24
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-25
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-26
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-27
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-28
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-29
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-30
+## [1] NA
 </code></pre>
 
 <p>Create a data frame that contains average daily steps by interval and plot average daily steps vs interval</p>
@@ -222,7 +584,8 @@ ggplot(aes(x = interval, y = avgSteps), data = stepInterval) + geom_line() + sca
 
 <p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-4"/> </p>
 
-<p>Calculate the interval with highest average daily steps</p>
+<p>Calculate the interval with highest average daily steps.
+###The interval with the highest average daily steps is 835</p>
 
 <pre><code class="r">with(stepInterval, interval[which(avgSteps == max(avgSteps))])
 </code></pre>
@@ -240,7 +603,7 @@ naRows
 ## 1  2304    0        0
 </code></pre>
 
-<p>Fill in NA steps observation with the mean steps of the same interval</p>
+<p>Fill in NA steps observations with the mean steps of the same 5-minute interval</p>
 
 <pre><code class="r">naStepIndex &lt;- which(is.na(data$steps))
 naStepInterval &lt;- data$interval[naStepIndex]
@@ -259,18 +622,381 @@ for (i in 1: length(naStepIndex)) {
 
 <p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-8"/> </p>
 
-<p>Calculate new mean and median of total number of steps. No difference in the value of mean and median compared to first part of the assignment.</p>
+<p>Calculate new mean and median of total number of steps.
+###All the non valid average daily steps in the first part of assignment have been replaced with valid average daily steps.</p>
 
-<pre><code class="r">mean(data$steps)
+<pre><code class="r">by(data$steps, data$date, mean)
 </code></pre>
 
-<pre><code>## [1] 37.38
+<pre><code>## data$date: 2012-10-01
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-10-02
+## [1] 0.4375
+## -------------------------------------------------------- 
+## data$date: 2012-10-03
+## [1] 39.42
+## -------------------------------------------------------- 
+## data$date: 2012-10-04
+## [1] 42.07
+## -------------------------------------------------------- 
+## data$date: 2012-10-05
+## [1] 46.16
+## -------------------------------------------------------- 
+## data$date: 2012-10-06
+## [1] 53.54
+## -------------------------------------------------------- 
+## data$date: 2012-10-07
+## [1] 38.25
+## -------------------------------------------------------- 
+## data$date: 2012-10-08
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-10-09
+## [1] 44.48
+## -------------------------------------------------------- 
+## data$date: 2012-10-10
+## [1] 34.38
+## -------------------------------------------------------- 
+## data$date: 2012-10-11
+## [1] 35.78
+## -------------------------------------------------------- 
+## data$date: 2012-10-12
+## [1] 60.35
+## -------------------------------------------------------- 
+## data$date: 2012-10-13
+## [1] 43.15
+## -------------------------------------------------------- 
+## data$date: 2012-10-14
+## [1] 52.42
+## -------------------------------------------------------- 
+## data$date: 2012-10-15
+## [1] 35.2
+## -------------------------------------------------------- 
+## data$date: 2012-10-16
+## [1] 52.38
+## -------------------------------------------------------- 
+## data$date: 2012-10-17
+## [1] 46.71
+## -------------------------------------------------------- 
+## data$date: 2012-10-18
+## [1] 34.92
+## -------------------------------------------------------- 
+## data$date: 2012-10-19
+## [1] 41.07
+## -------------------------------------------------------- 
+## data$date: 2012-10-20
+## [1] 36.09
+## -------------------------------------------------------- 
+## data$date: 2012-10-21
+## [1] 30.63
+## -------------------------------------------------------- 
+## data$date: 2012-10-22
+## [1] 46.74
+## -------------------------------------------------------- 
+## data$date: 2012-10-23
+## [1] 30.97
+## -------------------------------------------------------- 
+## data$date: 2012-10-24
+## [1] 29.01
+## -------------------------------------------------------- 
+## data$date: 2012-10-25
+## [1] 8.653
+## -------------------------------------------------------- 
+## data$date: 2012-10-26
+## [1] 23.53
+## -------------------------------------------------------- 
+## data$date: 2012-10-27
+## [1] 35.14
+## -------------------------------------------------------- 
+## data$date: 2012-10-28
+## [1] 39.78
+## -------------------------------------------------------- 
+## data$date: 2012-10-29
+## [1] 17.42
+## -------------------------------------------------------- 
+## data$date: 2012-10-30
+## [1] 34.09
+## -------------------------------------------------------- 
+## data$date: 2012-10-31
+## [1] 53.52
+## -------------------------------------------------------- 
+## data$date: 2012-11-01
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-02
+## [1] 36.81
+## -------------------------------------------------------- 
+## data$date: 2012-11-03
+## [1] 36.7
+## -------------------------------------------------------- 
+## data$date: 2012-11-04
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-05
+## [1] 36.25
+## -------------------------------------------------------- 
+## data$date: 2012-11-06
+## [1] 28.94
+## -------------------------------------------------------- 
+## data$date: 2012-11-07
+## [1] 44.73
+## -------------------------------------------------------- 
+## data$date: 2012-11-08
+## [1] 11.18
+## -------------------------------------------------------- 
+## data$date: 2012-11-09
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-10
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-11
+## [1] 43.78
+## -------------------------------------------------------- 
+## data$date: 2012-11-12
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-13
+## [1] 25.47
+## -------------------------------------------------------- 
+## data$date: 2012-11-14
+## [1] 37.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-15
+## [1] 0.1424
+## -------------------------------------------------------- 
+## data$date: 2012-11-16
+## [1] 18.89
+## -------------------------------------------------------- 
+## data$date: 2012-11-17
+## [1] 49.79
+## -------------------------------------------------------- 
+## data$date: 2012-11-18
+## [1] 52.47
+## -------------------------------------------------------- 
+## data$date: 2012-11-19
+## [1] 30.7
+## -------------------------------------------------------- 
+## data$date: 2012-11-20
+## [1] 15.53
+## -------------------------------------------------------- 
+## data$date: 2012-11-21
+## [1] 44.4
+## -------------------------------------------------------- 
+## data$date: 2012-11-22
+## [1] 70.93
+## -------------------------------------------------------- 
+## data$date: 2012-11-23
+## [1] 73.59
+## -------------------------------------------------------- 
+## data$date: 2012-11-24
+## [1] 50.27
+## -------------------------------------------------------- 
+## data$date: 2012-11-25
+## [1] 41.09
+## -------------------------------------------------------- 
+## data$date: 2012-11-26
+## [1] 38.76
+## -------------------------------------------------------- 
+## data$date: 2012-11-27
+## [1] 47.38
+## -------------------------------------------------------- 
+## data$date: 2012-11-28
+## [1] 35.36
+## -------------------------------------------------------- 
+## data$date: 2012-11-29
+## [1] 24.47
+## -------------------------------------------------------- 
+## data$date: 2012-11-30
+## [1] 37.38
 </code></pre>
 
-<pre><code class="r">median(data$steps)
+<pre><code class="r">by(data$steps, data$date, median)
 </code></pre>
 
-<pre><code>## [1] 0
+<pre><code>## data$date: 2012-10-01
+## [1] 34.11
+## -------------------------------------------------------- 
+## data$date: 2012-10-02
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-03
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-04
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-05
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-06
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-07
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-08
+## [1] 34.11
+## -------------------------------------------------------- 
+## data$date: 2012-10-09
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-10
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-11
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-12
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-13
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-14
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-15
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-16
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-17
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-18
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-19
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-20
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-21
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-22
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-23
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-24
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-25
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-26
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-27
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-28
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-29
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-30
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-10-31
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-01
+## [1] 34.11
+## -------------------------------------------------------- 
+## data$date: 2012-11-02
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-03
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-04
+## [1] 34.11
+## -------------------------------------------------------- 
+## data$date: 2012-11-05
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-06
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-07
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-08
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-09
+## [1] 34.11
+## -------------------------------------------------------- 
+## data$date: 2012-11-10
+## [1] 34.11
+## -------------------------------------------------------- 
+## data$date: 2012-11-11
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-12
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-13
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-14
+## [1] 34.11
+## -------------------------------------------------------- 
+## data$date: 2012-11-15
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-16
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-17
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-18
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-19
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-20
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-21
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-22
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-23
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-24
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-25
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-26
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-27
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-28
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-29
+## [1] 0
+## -------------------------------------------------------- 
+## data$date: 2012-11-30
+## [1] 34.11
 </code></pre>
 
 <p>Create a new factor variable to indicate &ldquo;weekday&rdquo; vs &ldquo;weekend&rdquo;</p>
